@@ -1,0 +1,22 @@
+pandas
+numpy
+matplotlib
+seaborn
+scikit-learn
+tensorflow
+keras
+mpl_toolkits.basemap
+
+
+⚙️ Notes:
+mpl_toolkits.basemap is sometimes installed separately as:
+
+bash
+Copy code
+pip install basemap
+If you face issues installing basemap on Windows, you can use:
+
+bash
+Copy code
+conda install -c conda-forge basemap
+(only if using Anaconda)
