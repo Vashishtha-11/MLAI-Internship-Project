@@ -1,66 +1,85 @@
-🧭 Step 1: Prepare Your Project Folder
+# Earthquake Prediction using Neural Networks
 
-Create a local folder (e.g., EarthquakePrediction) containing:
+## 📘 Overview
+This project focuses on predicting earthquake parameters such as **magnitude** and **depth** using seismic and temporal data.  
+It leverages **Machine Learning and Deep Learning** techniques to identify underlying patterns in earthquake occurrences.
 
-EarthquakePrediction/
-│
-├── EarthquakePrediction.ipynb
-├── requirements.txt
-├── README.md
-└── data/                (optional if your notebook uses a dataset)
+Developed as part of a Data Science internship project to explore predictive modeling, data preprocessing, and visualization of geospatial events.
 
-📘 Step 2: Write a README.md
+---
 
-Here’s a sample README.md you can use directly:
+## 📊 Dataset
+The model uses a dataset named `database.csv` containing:
+- **Date**
+- **Time**
+- **Latitude**
+- **Longitude**
+- **Depth**
+- **Magnitude**
 
-# 🌋 Earthquake Prediction using Machine Learning
+Data preprocessing included:
+- Combining `Date` and `Time` into a single `Datetime` column
+- Converting `Datetime` to a numerical `Timestamp`
+- Dropping missing values
+- Selecting key features (`Timestamp`, `Latitude`, `Longitude`) for prediction
 
-This project focuses on predicting the likelihood of earthquakes based on seismic data using Machine Learning techniques.  
-Developed as part of a data science internship project.
+---
 
-## 🚀 Features
-- Data cleaning and preprocessing
-- Feature extraction and selection
-- Model training using algorithms such as Random Forest / Logistic Regression
-- Model evaluation (accuracy, precision, recall)
-- Visualization of seismic activity trends
+## ⚙️ Methodology
 
-## 🧠 Tech Stack
-- Python
-- Pandas, NumPy
-- Scikit-learn
-- Matplotlib, Seaborn
-- Jupyter Notebook
+### 1. Data Visualization
+- Used **Basemap** and **Matplotlib** to visualize global earthquake locations.
+- Highlighted affected areas and seismic distribution across latitudes and longitudes.
 
-## 📂 Project Structure
+### 2. Model Development
+A **Feedforward Neural Network** was built using **Keras Sequential API**:
+- Two hidden layers with **sigmoid** activation
+- Output layer with **softmax** activation
+- Optimizer: **SGD**
+- Loss function: **Squared Hinge Loss**
+- Evaluation Metric: **Accuracy**
 
+### 3. Model Optimization
+Used **GridSearchCV** to fine-tune hyperparameters such as:
+- Number of neurons
+- Activation functions
+- Optimizers
+- Loss metrics
 
-EarthquakePrediction/
-├── EarthquakePrediction.ipynb
-├── requirements.txt
-├── README.md
-└── data/
+---
 
+## 🧪 Results
+The final model was trained for 20 epochs with a batch size of 10.  
+Evaluation on the test dataset yielded promising accuracy for predicting magnitude and depth trends.
 
-## ⚙️ Installation
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/<your-username>/EarthquakePrediction.git
+**Evaluation Result (example):**
+Loss = 0.21
+Accuracy = 90%
 
+yaml
+Copy code
 
-Navigate into the project folder:
+---
 
-cd EarthquakePrediction
+## 🧰 Technologies Used
+- **Python**
+- **Keras / TensorFlow**
+- **Scikit-learn**
+- **Pandas / NumPy**
+- **Matplotlib / Seaborn / Basemap**
+- **Jupyter Notebook**
 
+---
 
-Install dependencies:
+## 📈 Future Enhancements
+- Integrate additional geophysical parameters for better model generalization  
+- Deploy model as an interactive web dashboard using **Flask** or **Streamlit**  
+- Automate data collection using real-time APIs
 
-pip install -r requirements.txt
+---
 
-📊 Results
-
-The model achieved an accuracy of 90%, enabling better prediction of earthquake-prone areas and supporting risk mitigation strategies.
-
-🧾 Author
-
-Vashishtha Sagvekar
+## 👤 Author
+**Vashishtha Sagvekar**  
+- B.Tech in Artificial Intelligence & Machine Learning  
+- [LinkedIn](https://www.linkedin.com/in/vashishtha-sagvekar)  
+- [GitHub](https://github.com/Vashishtha-11)
